@@ -20,7 +20,7 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     citys = ['chicago','new york city','washington']
     months = ['january','february','march','april','may','june','all']
-    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday','all'] 
+    days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday','all']
     while True:
         city = input('enter the city you want (chicago, new york city, washington): ').lower()
         if city not in citys:
@@ -29,19 +29,19 @@ def get_filters():
             break
     # get user input for month (all, january, february, ... , june)
     while True:
-            month = input('enter the month you want to filterby(january, february, ... , june) or all to not filter!: ').lower()
+            month = input('enter the month you want to filterby(january, february, ... , june) or all to apply no filter!: ').lower()
             if month not in months:
                 print('\n please enther a  vaild month')
             else:
                 break
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input('enter the day you want to filterby(monday, tuesday, ... sunday) or all to no filter!: ').lower()
+        day = input('enter the day you want to filterby(monday, tuesday, ... sunday) or all to apply no filter!: ').lower()
         if day not in days:
             print('\n please enter a valid day')
         else:
             break
-        
+
     print('-'*40)
     return city, month, day
 def load_data(city, month, day):
@@ -56,27 +56,27 @@ def load_data(city, month, day):
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     Returns:
-        df - Pandas DataFrame containing city data filtered by month and day
+        df - Pandas DataFrame containing city data filtered by month and day or no filtered applied 
     """
-    
+
     df = pd.read_csv(CITY_DATA[city])
-    
-    
+
+
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     df['hour'] = df['Start Time'].dt.hour
     df['month'] = df['Start Time'].dt.month
     #day_name() from: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.dt.day_name.html
     df['day_of_week'] = df['Start Time'].dt.day_name()
-    
-    
+
+
     if month != 'all':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-    
+
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -85,15 +85,15 @@ def time_stats(df):
     # display the most common month
     common_month = df['month'].mode()[0]
     print('Most common Month: {}'.format(common_month))
-        
+
     # display the most common day of week
     common_day = df['day_of_week'].mode()[0]
     print('most common day: {}'.format(common_day))
-        
+
     # display the most common start hour
     common_hour = df['hour'].mode()[0]
     print('most common hour: {}'.format(common_hour))
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -102,12 +102,12 @@ def station_stats(df):
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    
+
     most_common_start_station = df['Start Station'].mode()[0]
     print('most common start station: {}'.format(most_common_start_station))
-    
+
     most_common_end_station = df['End Station'].mode()[0]
-    print('most common end station: {}'.format(most_common_end_station))   
+    print('most common end station: {}'.format(most_common_end_station))
     most_common_combiened_station = df['Start Station'] + ' to ' + df['End Station']
     most_common_combiened_station = most_common_combiened_station.mode()[0]
     print('most common combiened station: {}'.format(most_common_combiened_station))
