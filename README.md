@@ -4,14 +4,29 @@
 Date:   Mon Aug 30 09:38:56 2021 +0300
 
 ### Project Title
+<<<<<<< HEAD
 Bike Share
+||||||| f63b541
+Replace the Project Title
+=======
+Bike  share
+>>>>>>> documentation
 
 ### Description
-Describe what your project is about and what it does
+Bikeshare is a program shows related data to bikeshare system in three cities in the United State, Chicago, Washington, and New York City 
+for the first 6 months of year 2017 filtered by the user needs
+For i.e.: user can see the most common stations chicago
+
+### Requirement
+-python3  (-pandas -numpy librarys)
+-cities csv files
 
 ### Files used
-Include the files used
+-bikeshare_2.py
+-chicago.csv
+-new_york_city.csv
+-washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+-credit for mentor: Richard Kalehoff  who inspired me to use .git and github more in the future    -github: https://github.com/richardkalehoff
 

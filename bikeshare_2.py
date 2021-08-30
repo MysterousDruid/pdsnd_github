@@ -29,14 +29,14 @@ def get_filters():
             break
     # get user input for month (all, january, february, ... , june)
     while True:
-            month = input('enter the month you want to filterby(january, february, ... , june) or all to not filter!: ').lower()
+            month = input('enter the month you want to filterby(january, february, ... , june) or all to apply no filter!: ').lower()
             if month not in months:
                 print('\n please enther a  vaild month')
             else:
                 break
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input('enter the day you want to filterby(monday, tuesday, ... sunday) or all to no filter!: ').lower()
+        day = input('enter the day you want to filterby(monday, tuesday, ... sunday) or all to apply no filter!: ').lower()
         if day not in days:
             print('\n please enter a valid day')
         else:
@@ -56,7 +56,13 @@ def load_data(city, month, day):
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     Returns:
+<<<<<<< HEAD
         df - Pandas DataFrame containing city data filtered by month and day or no filter applys
+||||||| f63b541
+        df - Pandas DataFrame containing city data filtered by month and day
+=======
+        df - Pandas DataFrame containing city data filtered by month and day or no filtered applied 
+>>>>>>> documentation
     """
 
     df = pd.read_csv(CITY_DATA[city])
