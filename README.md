@@ -18,5 +18,5 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+credit for mentor: Richard Kalehoff     -github: https://github.com/richardkalehoff  who inspired me to use .git and github more in the future
 
