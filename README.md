@@ -11,6 +11,10 @@ Bikeshare shows related data to bikeshare system in three cities in the United S
 filtered by the user needs
 For i.e.: user can see the total time traveled for chicago
 
+### Requirement
+-python3  (-pandas -numpy librarys)
+-cities csv files
+
 ### Files used
 bikeshare_2.py
 chicago.csv
