@@ -22,5 +22,6 @@ For i.e.: user can see the most common stations chicago
 -washington.csv
 
 ### Credits
+-credit for udacity, forked the base repository from them   -github: https://github.com/udacity/pdsnd_github
 -credit for mentor: Richard Kalehoff  who inspired me to use .git and github more in the future    -github: https://github.com/richardkalehoff
 
