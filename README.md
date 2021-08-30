@@ -4,13 +4,7 @@
 Date:   Mon Aug 30 09:38:56 2021 +0300
 
 ### Project Title
-<<<<<<< HEAD
-Bike Share
-||||||| f63b541
-Replace the Project Title
-=======
-Bike  share
->>>>>>> documentation
+bike share
 
 ### Description
 Bikeshare is a program shows related data to bikeshare system in three cities in the United State, Chicago, Washington, and New York City 
